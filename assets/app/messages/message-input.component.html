@@ -1,0 +1,17 @@
+<div class="col-md-8 col-md-offset-2">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="content">Type your message here:</label>
+      <input
+      type="text"
+      id="content"
+      class="form-control"
+      [ngModel]="message?.content"
+      name="content"
+      ngControl="passwordCtrl"
+      required>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.form.valid">Save</button>
+    <button class="btn btn-danger" type="button" (click)="onClear(f)">Clear</button>
+  </form>
+</div>
